@@ -12,7 +12,7 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             //Data Transformation Object - DTO
-            //ProductTest();
+            ProductTest();
             //IoC Container öğrenince new kullanmayacağız
             //CategoryTest();
         }
@@ -30,9 +30,9 @@ namespace ConsoleUI
         {
             ProductManager productManager = new ProductManager(new EfProductDal());
 
-            foreach (var product in productManager.GetByUnitPrice(40, 100))
+            foreach (var product in productManager.GetProductDetails())
             {
-                Console.WriteLine(product.ProductName);
+                Console.WriteLine(product.ProductName+"/"+product.CategoryName);
             }
         }
     }
