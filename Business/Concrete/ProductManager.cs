@@ -42,7 +42,7 @@ namespace Business.Concrete
             //InMemoryProductDal inMemoryProductDal = new InMemoryProductDal();
             //Bir iş sınıfı başka sınıfları new lemez.
 
-            if (DateTime.Now.Hour==22)
+            if (DateTime.Now.Hour==1)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
