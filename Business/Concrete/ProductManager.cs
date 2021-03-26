@@ -36,7 +36,7 @@ namespace Business.Concrete
         }
 
         //Claim - İddia etmek
-        //[SecuredOperation("product.add,admin")]
+        [SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
         [CacheRemoveAspect("IProductService.Get")]
         public IResult Add(Product product)
@@ -94,7 +94,7 @@ namespace Business.Concrete
             //InMemoryProductDal inMemoryProductDal = new InMemoryProductDal();
             //Bir iş sınıfı başka sınıfları new lemez.
 
-            if (DateTime.Now.Hour==2)
+            if (DateTime.Now.Hour==5)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
@@ -120,7 +120,7 @@ namespace Business.Concrete
 
         public IDataResult<List<ProductDetailDto>> GetProductDetails()
         {
-            if (DateTime.Now.Hour==2)
+            if (DateTime.Now.Hour==5)
             {
                 return new ErrorDataResult<List<ProductDetailDto>>(Messages.MaintenanceTime);
             }
